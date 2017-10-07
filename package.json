@@ -1,0 +1,30 @@
+{
+  "name": "flow-frt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "flow-remove-types src/ -d lib/ --pretty",
+    "watch": "watch 'npm run build' ./src",
+    "prepublish": "npm run build",
+    "flow": "flow",
+    "rune": "node ./lib/index.js",
+    "moddle": "npm run build && npm run rune",
+    "start": "nodemon --config nodemon.json --exec npm run moddle"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "concurrently": "^3.5.0",
+    "flow-bin": "^0.56.0",
+    "flow-remove-types": "^1.2.1",
+    "nodemon": "^1.12.1",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1"
+  }
+}
